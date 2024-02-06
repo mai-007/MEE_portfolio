@@ -1,0 +1,13 @@
+.flexContainer {
+  composes: spaceBetween from '@/styles/utils.module.scss';
+}
+
+.header{
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  width: 100%;
+  font-family: var(--font-baloo);
+  color: var(--black);
+  padding: 1rem 2rem;
+}

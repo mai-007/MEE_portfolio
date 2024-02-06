@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/*": ["/lib/*"],
+      "@/components/*": ["/components/*"],
+      "@/styles/*": ["/styles/*"],
+      "@/public/*": ["/public/*"],
+      "@/images/*": ["/images/*"],
+      "@/data/*": ["/data/*"],
+    }
+  }
+}

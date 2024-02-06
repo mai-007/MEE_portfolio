@@ -1,0 +1,27 @@
+/* .stack直下の子要素(1つ目以外)の
+   間隔を上マージンで1.5emに指定 */
+.stack > * + * {
+  margin-top: var(--stack-space, 1.5em);
+}
+
+.stack h2,
+.stack h3 {
+  --stack-space: 2em;
+}
+
+.stack h2 + *,
+.stack h3 + *{
+  --stack-space: 0.8em;
+}
+
+.stack p{
+  line-height: 1.8;
+}
+
+/* ulは本文中で使う可能性があるため
+  グローバルスタイルでリセットしたスタイルを
+  ブラウザ標準のスタイルに戻す*/
+.stack ul {
+  padding: revert;
+  list-style: revert;
+}

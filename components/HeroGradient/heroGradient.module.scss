@@ -1,0 +1,63 @@
+.bgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  background:linear-gradient(45deg, #3bade3,#9844b7,#44ea76);/*グラデーションを定義*/
+	background-size: 200% 200%;/*サイズを大きくひきのばす*/
+	animation: bggradient 20s ease infinite;
+}
+@keyframes bggradient{
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.text {
+  max-width: 1152px;
+  padding-top: calc(var(--display) * 0.5);
+  padding-bottom: calc(var(--display) * 0.7);
+  text-align: center;
+  animation: tracking-in-contract 20s both;
+}
+
+@keyframes tracking-in-contract{
+      0% {
+          letter-spacing: "1em";
+          opacity: 0;
+      }
+      40% {
+          opacity: .6;
+      }
+      to {
+          letter-spacing: normal;
+          opacity: 1;
+      }
+  }
+
+.title{
+  font-size: var(--heading1);
+  font-weight: 900;
+}
+
+.subtitle{
+  font-size: 1rem;
+}
+
+/* image */
+.image{
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .image{
+    width: 50%;
+  }
+}
