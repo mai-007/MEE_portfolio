@@ -26,6 +26,9 @@ export default function RootLayout({ children }) {
 }
 
 export const metadata = {
+  robots: {
+    index: false,
+  },
   ...baseMetadata,
   openGraph: {
     ...openGraphMetadata,

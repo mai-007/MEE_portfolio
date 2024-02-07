@@ -27,7 +27,7 @@ export default  async function Home() {
       <Hero/>
       <Container>
         <Posts posts={posts} />
-        <Pagination nextUrl="/blog" nextText="More Posts" />
+        {/* <Pagination nextUrl="/blog" nextText="More Posts" /> */}
       </Container>
     </>
   )
