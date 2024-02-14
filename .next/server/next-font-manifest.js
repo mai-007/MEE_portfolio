@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/mai/Dropbox/05.Portforio/2024/app/layout":["static/media/5436164e6b2d4e5d-s.p.woff2","static/media/876c0febf3d2acd0-s.p.ttf"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
