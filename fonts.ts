@@ -14,5 +14,5 @@ const baloo = localFont({
   variable: "--font-baloo",
   display: 'swap',
 })
- 
+
 export { notojp, baloo }
