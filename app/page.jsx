@@ -4,6 +4,8 @@ import Hero from '@/components/Hero/Hero'
 import Posts from '@/components/Post/Posts'
 import Skill from '@/components/Skill/Skill'
 import { getPlaiceholder } from 'plaiceholder'
+import Pagination from 'components/Pagination/Pagination'
+import JobCareer from '@/components/JobCareer/JobCareer'
 
 
 // ローカルの代替アイキャッチ画像
@@ -25,9 +27,12 @@ export default  async function Home() {
       <Hero/>
       <Container>
         <Posts posts={posts} />
-        {/* <Pagination nextUrl="/blog" nextText="More Posts" /> */}
+        <Pagination nextUrl="/blog" nextText="過去制作一覧へ" />
       </Container>
       <Skill/>
+      <Container>
+        <JobCareer/>
+      </Container>
     </>
   )
 }

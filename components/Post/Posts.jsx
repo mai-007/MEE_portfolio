@@ -6,13 +6,14 @@ import Button from '@/components/Button/Button'
 import { BiChevronRight } from "react-icons/bi"
 
 
-export default function Posts({ posts }) {
+export default function Posts({ posts}) {
   return (
     <div className={styles.gridContainer}>
       {posts.map(({ title, slug, eyecatch, url, categories}) => (
         <article className={styles.post} key={slug}>
         <Link 
           href={url}
+          rel="noopener noreferrer" target="_blank"
         > 
           <figure>
             <Image

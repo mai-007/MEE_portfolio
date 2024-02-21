@@ -33,6 +33,9 @@
 }
 
 /* basic setting */
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: var(--black);
   font-family: "Noto Sans JP";

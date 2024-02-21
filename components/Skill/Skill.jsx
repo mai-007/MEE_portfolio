@@ -27,7 +27,7 @@ export default function Skill(){
   ];
 
   return (
-    <div className={styles.container}>
+    <section id="skillSet" className={styles.container}>
       <h2>スキルセット</h2>
       {categories.map((category, categoryIndex) => (
         <div key={categoryIndex} className={styles.content}>
@@ -47,6 +47,6 @@ export default function Skill(){
           </div>
           </div>
         ))}
-      </div>
+      </section>
   );
 }

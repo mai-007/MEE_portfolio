@@ -1,0 +1,25 @@
+.container{
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+.inner{
+  max-width: calc((100% - 56px) / 2);
+}
+.box{
+  background: #fff;
+  padding: 16px;
+  border-radius: 16px;
+}
+.date{
+  font-size: 1.2rem;
+  font-family: var(--font-baloo);
+}
+.flex{
+  margin-left: 16px;
+}
+.job{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 16px;
+}

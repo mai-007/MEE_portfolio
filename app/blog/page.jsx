@@ -2,7 +2,6 @@ import { siteMeta } from '@/lib/constants'
 import { openGraphMetadata, twitterMetadata } from '@/lib/baseMetadata'
 import { getAllPosts } from '@/lib/api'
 import Container from '@/components/Container/Container'
-import Hero from '@/components/Hero/Hero'
 import Posts from '@/components/Post/Posts'
 import { getPlaiceholder } from 'plaiceholder'
 
@@ -24,7 +23,6 @@ export default async function Blog() {
 
   return (
     <Container>
-      <Hero title="Blog" subtitle="Recent Posts" />
       <Posts posts={posts} />
     </Container>
   )
@@ -33,8 +31,8 @@ export default async function Blog() {
 
 //meta
 const { siteTitle, siteUrl } = siteMeta
-const pageTitle = 'プログ'
-const pageDesc = 'ブログの記事一覧'
+const pageTitle = 'works'
+const pageDesc = '過去制作一覧'
 const ogpTitle = `${pageTitle} | ${siteTitle}`
 const ogpUrl = new URL('/blog', siteUrl).toString()
 

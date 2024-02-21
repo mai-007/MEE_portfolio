@@ -1,10 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import {Link as Scroll} from "react-scroll"
 import styles from './nav.module.scss'
 
 export default function Nav() {
+
+  const pathname = usePathname();
+
   const [ navIsOpen, setNavIsOption ] = useState(false)
   
   const toggleNav = () => {
@@ -39,13 +44,27 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link href="/about" onClick={closeNav}>
-            About
+        {(pathname == '/')?
+          <Scroll 
+            link to="skillSet" 
+            smooth={true}
+            duration={100} 
+            onClick={closeNav} 
+            offset={-30}
+          >
+            Skills
+          </Scroll>
+          :
+          <Link href={`/#skillSet`} 
+            onClick={closeNav}
+          >
+            Skill
           </Link>
+        }
         </li>
         <li>
           <Link href="/blog" onClick={closeNav}>
-            Blog
+            Works
           </Link>
         </li>
       </ul>
