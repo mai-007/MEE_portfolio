@@ -1,6 +1,6 @@
 import styles from './pagination.module.scss'
 import Link from 'next/link'
-import { BiChevronRight } from "react-icons/bi"
+import { BiChevronRight, BiChevronLeft } from "react-icons/bi"
 
 export default function Pagination({
   prevText = '',
@@ -13,7 +13,7 @@ export default function Pagination({
       {prevText && prevUrl && (
         <li className={styles.prev}>
           <Link href={prevUrl} className={styles.iconText}>
-          <BiChevronRight />
+          <BiChevronLeft />
               <span>{prevText}</span>
           </Link>
         </li>
