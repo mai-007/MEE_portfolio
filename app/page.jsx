@@ -1,10 +1,8 @@
-import { siteMeta } from '@/lib/constants'
-import { openGraphMetadata, twitterMetadata } from 'lib/baseMetadata'
 import { getAllPosts } from '@/lib/api'
 import Container from '@/components/Container/Container'
 import Hero from '@/components/Hero/Hero'
 import Posts from '@/components/Post/Posts'
-import Pagination from '@/components/Pagination/Pagination'
+import Skill from '@/components/Skill/Skill'
 import { getPlaiceholder } from 'plaiceholder'
 
 
@@ -29,6 +27,7 @@ export default  async function Home() {
         <Posts posts={posts} />
         {/* <Pagination nextUrl="/blog" nextText="More Posts" /> */}
       </Container>
+      <Skill/>
     </>
   )
 }

@@ -1,27 +1,20 @@
 'use client'
 import Image from "next/legacy/image";
-import Link from 'next/link';
 
 // swiper
 import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
+import { BsGithub } from "react-icons/bs";
+import Link from "next/link"
 import styles from "./hero.module.scss";
-
-const imagesData = [
-  '/images/xd.svg',
-  '/images/figma_circle.svg',
-  '/images/photoshop.svg',
-  '/images/illustrator.svg',
-];
 
 export default function Hero() {
 
   return (
-    <div className={`${styles.wrapper}`}>
       <Swiper
-      modules={[Navigation, Pagination, Autoplay,EffectFade]}
+        modules={[Navigation, Pagination, Autoplay,EffectFade]}
         style={{
           '--swiper-navigation-color': '#fff',
           '--swiper-pagination-color': '#fff',
@@ -47,21 +40,25 @@ export default function Hero() {
         onSlideChange={() => console.log('slide change')}
         className={styles.slideWrapper}
       >
-          <SwiperSlide>
-          {imagesData.map((image, index) => (
-            <div key={index}>
-            <Image
-              src={image}
-                alt=""
-                layout="fill"
-                objectFit="cover"
-                sizes="(min-width: 1152px) 576px, 50vw"
-            />
+          <SwiperSlide className={styles.slideItem}>
+            <span className={styles.swiperSubTitle}>MISSION</span>
+            <h2 className={styles.swiperTitle}>心動かすデザインと保守性・再利用性の高いコードを</h2>
+            <div className={styles.text}>
+              <p>
+              このサイトはJamstackでHeadressな高速サイトです。
+              </p>
+              <p>Next.jsでAppRouterを使用しmicroCMSにての過去制作サイトの情報を配信しています。
+              </p>
             </div>
-            ))}
-            <h2 className={styles.swiperTitle}>lottieAnime</h2>
-          </SwiperSlide>
+          <Link
+            className={styles.link}
+            href="https://github.com/mai-007/2023_portfplio"
+            rel="noopener noreferrer" target="_blank"
+            >
+            <BsGithub />
+            &nbsp;ソースコードはこちら
+          </Link>
+        </SwiperSlide>
       </Swiper>
-    </div>
   );
 }

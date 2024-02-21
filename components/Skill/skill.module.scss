@@ -1,0 +1,39 @@
+.container{
+  max-width: 1152px;
+  margin: 88px auto;
+  padding: 56px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  border-radius: 32px;
+  backdrop-filter: blur(88px);
+  filter: drop-shadow var(--box-shadow-xl);
+}
+
+.inner{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.content{
+  margin: 24px 32px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.imageWrap{
+  position: relative;
+}
+
+.image {
+  object-fit: contain;
+  padding: .5rem;
+  width: auto!important;
+  max-width: 152px;
+  margin-right: .5rem;
+}
