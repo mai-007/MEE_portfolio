@@ -63,6 +63,25 @@ export default function Nav() {
         }
         </li>
         <li>
+        {(pathname == '/')?
+          <Scroll 
+            link to="Career" 
+            smooth={true}
+            duration={100} 
+            onClick={closeNav} 
+            offset={-30}
+          >
+            Career
+          </Scroll>
+          :
+          <Link href={`/#Career`} 
+            onClick={closeNav}
+          >
+            Skill
+          </Link>
+        }
+        </li>
+        <li>
           <Link href="/blog" onClick={closeNav}>
             Works
           </Link>
