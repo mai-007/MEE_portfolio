@@ -16,7 +16,7 @@ export default function Skill(){
       images: ['/tailwind.png', '/emotion.png', '/css-modules.png', '/sass.jpg'] 
     },
     { title: 'Hosting', 
-    images: ['/firebase.png', '/Vercel.png', '/netlify.png'] 
+    images: ['/firebase.png', '/vercel.png', '/netlify.png'] 
   },
     { title: 'CMS', 
       images: ['/microCMS.png', '/wp.png'] 

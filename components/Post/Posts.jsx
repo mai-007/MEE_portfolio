@@ -11,6 +11,9 @@ export default function Posts({ posts }) {
     <div className={styles.gridContainer}>
       {posts.map(({ title, slug, eyecatch, url, categories}) => (
         <article className={styles.post} key={slug}>
+        <Link 
+          href={url}
+        > 
           <figure>
             <Image
               src={eyecatch.url}
@@ -22,6 +25,7 @@ export default function Posts({ posts }) {
               blurDataURL={eyecatch.blurDataURL}
             />
           </figure>
+          </Link>
           {/* <ul>
             {categories.map(({ name, slug }) =>(
               <li key={slug}>
