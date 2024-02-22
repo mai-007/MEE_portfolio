@@ -1,25 +1,28 @@
 .container{
   padding: 16px;
-  display: flex;
-  justify-content: space-around;
 }
 .inner{
-  max-width: calc((100% - 56px) / 2);
+  position: relative;
+  .right{
+    margin-left: auto;
+  }
 }
 .box{
+  position: relative;
   background: #fff;
   padding: 16px;
   border-radius: 16px;
+  max-width: calc((100% - 56px) / 2);
 }
 .date{
   font-size: 1.2rem;
   font-family: var(--font-baloo);
 }
-.flex{
+.item{
   margin-left: 16px;
 }
 .job{
   display: block;
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
