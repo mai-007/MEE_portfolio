@@ -10,7 +10,7 @@ export default function Skill(){
       images: ['/next.png', '/gatsby.png', '/astro.png', '/vite.png'] 
     },
     { title: 'Frontend', 
-      images: ['/php.png', '/js.png', '/ts.png', '/react.png', '/node.png', '/Gas.png', '/python.png', '/html.png']
+      images: ['/php.png', '/js.png', '/ts.png', '/react.png', '/node.png', '/gas.png', '/python.png', '/html.png']
     },
     { title: 'CSS', 
       images: ['/tailwind.png', '/emotion.png', '/css-modules.png', '/sass.jpg'] 
