@@ -18,6 +18,7 @@
     "add": "^2.0.6",
     "data-fns": "^1.1.0",
     "date-fns": "^3.2.0",
+    "dotenv": "^16.4.5",
     "embla-carousel-react": "^7.1.0",
     "eslint": "^8.39.0",
     "framer-motion": "^10.18.0",
