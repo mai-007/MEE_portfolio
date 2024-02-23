@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import Analytics from "@/components/Analytics/Analytics";
 import {
   baseMetadata,
   openGraphMetadata,
@@ -15,8 +17,13 @@ import { notojp, baloo } from '../fonts';
 
 export default function RootLayout({ children }) {
   return (
-      <html lang={siteLang}>
+      <html 
+        lang={siteLang}
+        >
         <body className={`${notojp.variable} ${baloo.variable}`}>
+        <Suspense>
+          <Analytics />
+        </Suspense>
           <Layout>
             {children}
           </Layout>
