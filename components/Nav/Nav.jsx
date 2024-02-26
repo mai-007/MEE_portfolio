@@ -46,7 +46,7 @@ export default function Nav() {
         <li>
         {(pathname == '/')?
           <Scroll 
-            link to="skillSet" 
+            to="skillSet" 
             smooth={true}
             duration={100} 
             onClick={closeNav} 
@@ -65,7 +65,7 @@ export default function Nav() {
         <li>
         {(pathname == '/')?
           <Scroll 
-            link to="Career" 
+            to="Career" 
             smooth={true}
             duration={100} 
             onClick={closeNav} 
