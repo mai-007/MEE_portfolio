@@ -38,12 +38,12 @@ export default function Nav() {
         <span className="sr-only">MENU</span>
       </button>
       <ul className={styles.list}>
-        <li>
+        <li key="home">
           <Link href="/" onClick={closeNav}>
             Home
           </Link>
         </li>
-        <li>
+        <li key="skills">
         {(pathname == '/')?
           <Scroll 
             to="skillSet" 
@@ -62,7 +62,7 @@ export default function Nav() {
           </Link>
         }
         </li>
-        <li>
+        <li key="career">>
         {(pathname == '/')?
           <Scroll 
             to="Career" 
@@ -81,7 +81,7 @@ export default function Nav() {
           </Link>
         }
         </li>
-        <li>
+        <li key="works">
           <Link href="/blog" onClick={closeNav}>
             Works
           </Link>
