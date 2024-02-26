@@ -62,7 +62,7 @@ export default function Nav() {
           </Link>
         }
         </li>
-        <li key="career">>
+        <li key="career">
         {(pathname == '/')?
           <Scroll 
             to="Career" 
