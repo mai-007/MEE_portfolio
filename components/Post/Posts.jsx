@@ -1,16 +1,56 @@
+'use client'
+
 import styles from './posts.module.scss'
 import Link from 'next/link'
+import { motion } from 'framer-motion';
 import Image from 'next/legacy/image'
 import Button from '@/components/Button/Button'
-
 import { BiChevronRight } from "react-icons/bi"
 
 
+const container = {
+  hidden: {
+    opacity: 0,
+    y: 200, // offset
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  show: {
+    opacity: 1,
+    y: [50, 0],
+    transition: {
+      duration: .5,
+      ease: 'easeInOut'
+    },
+  },
+};
+
 export default function Posts({ posts}) {
   return (
-    <div className={styles.gridContainer}>
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      className={styles.gridContainer}
+      >
       {posts.map(({ title, slug, eyecatch, url, categories}) => (
-        <article className={styles.post} key={slug}>
+        <motion.article
+          variants={item}
+          className={styles.post} key={slug}
+          >
         <Link 
           href={url}
           rel="noopener noreferrer" target="_blank"
@@ -47,8 +87,8 @@ export default function Posts({ posts}) {
               </Link>
               <Button url={url}/>
             </div>
-        </article>
+        </motion.article>
       ))}
-    </div>
+    </motion.div>
   )
 }

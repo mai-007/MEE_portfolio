@@ -50,7 +50,7 @@ const Circle = ({ size, color, initialPosition }) => {
 };
 
 const TrailingCircles = () => {
-  const circleSize = 300;
+  const circleSize = 400;
   const colors = ['#FE9562', '#FD6696', '#FFCC63'];
     // 三角形の配置
     const triangles = [

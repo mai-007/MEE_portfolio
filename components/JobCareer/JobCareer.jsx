@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import styles from './JobCareer.module.scss'
+import { motion } from 'framer-motion';
 
 export default function JobCareer() {
   const Career = [
@@ -64,12 +67,52 @@ export default function JobCareer() {
   // Careerとwebを年月でソート
     const sortedData = [...careerData, ...webData].sort((a, b) => b.date.localeCompare(a.date));
 
+    const container = {
+      hidden: {
+        opacity: 0,
+        y: 200, // offset
+      },
+      show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 1,
+          staggerChildren: 0.1,
+        },
+      },
+    };
+    
+    const item = {
+      hidden: {
+        opacity: 0,
+        y: 200,
+      },
+      show: {
+        opacity: 1,
+        y: [50, 0],
+        transition: {
+          duration: 1,
+          ease: 'easeInOut'
+        },
+      },
+    };
+
   return(
-    <section id="Career">
+    <motion.section
+      id="Career"
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      >
       <h2>Career</h2>
       <div className={styles.container}>
         {sortedData.map((item, index) => (
-          <div className={styles.inner}>
+          <motion.div 
+            initial="hidden"
+            whileInView="show"
+            className={styles.inner} 
+            variants={item}
+          >
           <dl
             className={`${styles.box} ${item.type === 'web' ? styles.right : ''}`}
             key={index}>
@@ -80,9 +123,9 @@ export default function JobCareer() {
                 {item.text}
             </dd>
           </dl>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   )
 }

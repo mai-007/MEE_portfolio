@@ -1,17 +1,11 @@
 .siteLink{
+  composes: glass from '@/styles/composes.module.scss';
   display: flex;
   align-items: center;
   justify-content: center;
   width: 12rem;
   padding: 0.5rem;
-  background: #fff;
-  color: var(--accent);
-  border: 1px solid var(--accent);
   border-radius: 8px;
   transition: 1s;
   font-family: var(--font-baloo);
-  &:hover{
-    background: var(--accent);
-    color: #fff;
-  }
 }

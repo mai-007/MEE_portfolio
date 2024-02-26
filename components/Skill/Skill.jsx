@@ -1,5 +1,37 @@
+'use client'
 import styles from './skill.module.scss'
 import Image from 'next/image'
+import { motion } from 'framer-motion';
+
+const container = {
+  hidden: {
+    opacity: 0,
+    y: 200, // offset
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: {
+    opacity: 0,
+    y: 200,
+  },
+  show: {
+    opacity: 1,
+    y: [50, 0],
+    transition: {
+      duration: .5,
+      ease: 'easeInOut'
+    },
+  },
+};
 
 export default function Skill(){
   const categories = [
@@ -27,14 +59,26 @@ export default function Skill(){
   ];
 
   return (
-    <section id="skillSet" className={styles.container}>
+    <motion.section 
+      id="skillSet"
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      className={styles.container}>
       <h2>スキルセット</h2>
       {categories.map((category, categoryIndex) => (
-        <div key={categoryIndex} className={styles.content}>
+        <motion.div 
+          key={categoryIndex}
+          className={styles.content}
+          variants={item}
+        >
         <h3>{category.title}</h3>
           <div className={styles.inner}>
             {category.images.map((image, imageIndex) => (
-              <figure key={imageIndex} className={styles.imageWrap}>
+              <figure 
+                key={imageIndex}
+                className={styles.imageWrap}
+              >
                 <Image
                   className={styles.image}
                   src={image}
@@ -45,8 +89,8 @@ export default function Skill(){
               </figure>
             ))}
           </div>
-          </div>
+          </motion.div>
         ))}
-      </section>
+      </motion.section>
   );
 }

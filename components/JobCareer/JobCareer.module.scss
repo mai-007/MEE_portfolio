@@ -8,8 +8,8 @@
   }
 }
 .box{
+  composes: glass from '@/styles/composes.module.scss';
   position: relative;
-  background: #fff;
   padding: 16px;
   border-radius: 16px;
   max-width: calc((100% - 56px) / 2);

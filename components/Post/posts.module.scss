@@ -8,16 +8,16 @@
 
 .post{
   position: relative;
-  background: #fff;
+  composes: glass from '@/styles/composes.module.scss';
   padding: 2rem;
   border-radius: 1rem;
-  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2)) drop-shadow(0px 0px 10px rgba(1,0,10,0.1));
   transition: 1s;
   cursor: pointer;
   &:hover{
-    filter: none;
     figure{
-      transform: scale(1.1);
+      img{
+        zoom: 1.5;
+      }
     }
   }
   figure {
@@ -33,7 +33,7 @@
   font-size: 1.2rem;
   font-weight: 400;
   font-family: var(--font-notojp);
-  color: var(--gray-50);
+  color: var(--gray-75);
 }
 
 .flex{
@@ -49,10 +49,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--accent);
-  border-bottom: 1px solid var(--accent);
+  border-bottom: 1px solid #222;
   transition: 0.5s;
-  &:hover{
-    border-bottom: 2px solid var(--accent);
-  }
 }

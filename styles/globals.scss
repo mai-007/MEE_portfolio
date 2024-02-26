@@ -6,8 +6,9 @@
   --gray-50: #707070;
   --gray-75: #444444;
   --black: #221429;
-  --accent: #0d87e0;
+  --accent: #FD6696;
   --beige: #f7f4f2;
+  --gradient: linear-gradient(159deg, rgba(242, 96, 85, 0.82) 10%, rgba(253, 102, 150, 0.82) 52%, rgba(217, 100, 239, 0.82));
 
 
   /* typography(font-size) */
@@ -31,6 +32,8 @@
   /* box-shadow */
   --box-shadow-xl: 0px 0px 5px 1px #e7e7e7,1px 0px 0px 1px #e7e7e7;
 }
+
+
 
 /* basic setting */
 html {
