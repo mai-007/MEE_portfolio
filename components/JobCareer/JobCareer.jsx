@@ -108,6 +108,7 @@ export default function JobCareer() {
       <div className={styles.container}>
         {sortedData.map((item, index) => (
           <motion.div 
+            key={index}
             initial="hidden"
             whileInView="show"
             className={styles.inner} 
