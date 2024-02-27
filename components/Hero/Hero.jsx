@@ -47,12 +47,36 @@ export default function Hero() {
               <p>
               このサイトはJamstackでHeadressな高速サイトです。
               </p>
-              <p>Next.jsでAppRouterを使用しmicroCMSにての過去制作サイトの情報を配信しています。
+              <p>
+              <Link
+                className="link"
+                href="https://nextjs.org/"
+                rel="noopener noreferrer" target="_blank"
+              >
+                Next.js
+                </Link>
+                で
+                <Link
+                  className="link"
+                  href="https://nextjs.org/docs/app"
+                  rel="noopener noreferrer" target="_blank"
+                >
+                  AppRouter
+                </Link>
+                  を使用し
+                <Link
+                  className="link"
+                  href="https://microcms.io/"
+                  rel="noopener noreferrer" target="_blank"
+                >
+                microCMS
+                </Link>
+                にてAPIで過去制作サイトを配信しています。
               </p>
             </div>
           <Link
             className={styles.link}
-            href="https://github.com/mai-007/2023_portfplio"
+            href="https://github.com/mai-007/MEE_portfolio"
             rel="noopener noreferrer" target="_blank"
             >
             <BsGithub />

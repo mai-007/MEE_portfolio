@@ -1,0 +1,18 @@
+.flexContainer{
+  padding: 56px 24px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 24px;
+}
+.link{
+  width: 560px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+@media(min-width: 500px) {
+  .flexContainer{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}

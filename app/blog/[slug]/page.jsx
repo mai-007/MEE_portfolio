@@ -14,9 +14,10 @@ import { eyecatchLocal } from '@/lib/constants'
 import { siteMeta } from '@/lib/constants'
 import { openGraphMetadata, twitterMetadata } from '@/lib/baseMetadata'
 import Button from '@/components/Button/Button'
+import styles from '@/styles/blog.module.scss'
 
 
-export default  async function Post({
+export default async function Post({
   params })
   {
     const slug = params.slug
@@ -29,12 +30,13 @@ export default  async function Post({
     eyecatch.blurDataURL = base64
     const allSlugs = await getAllSlugs()
     const [prevPost, nextPost] = prevNextPost(allSlugs, slug)
+    const spImage = post.spimage
 
+    console.log(spImage)
   
     return(
     <Container>
       <article>
-        <PostHeader title={title} subTitle="Blog Article" publish={publish}/>
         <figure>
           <Image 
             key={eyecatch.url}
@@ -49,11 +51,29 @@ export default  async function Post({
             blurDataURL={eyecatch.blurDataURL}
           />
         </figure>
+        <PostHeader title={title} subTitle="Work Article" publish={publish}/>
         <TwoColumn>
           <TwoColumnMain>
             <PostBody>
               <ConvertBody contentHTML={content} />
             </PostBody>
+            <div className={styles.flexContainer}>
+                {
+                spImage.map(({ url, index }) =>(
+                  <Image
+                    key={index}
+                    src={url}
+                    alt=""
+                    width={340.5}
+                    height={672}
+                    layout="responsive"
+                    priority
+                    placeholder="blur"
+                    blurDataURL={eyecatch.blurDataURL}>
+                  </Image>
+                  ))}
+              </div>
+            <Button url={link} className={styles.link}/>
           </TwoColumnMain>
           <TwoColumnSidebar>
             <PostCategories categories={categories} />

@@ -1,6 +1,8 @@
 :root {
   /* color */
   --white: #ffffff;
+  --link: #1a73e8;
+  --visit: #551a8b;
   --gray-10: #eeeeee;
   --gray-25: #aaaaaa;
   --gray-50: #707070;
@@ -33,6 +35,14 @@
   --box-shadow-xl: 0px 0px 5px 1px #e7e7e7,1px 0px 0px 1px #e7e7e7;
 }
 
+.link{
+  color: var(--link);
+  border-bottom: 1px solid var(--link);
+  :visit{
+    color: var(--visit);
+    border-bottom: 1px solid var(--visit);
+  }
+}
 
 
 /* basic setting */

@@ -38,7 +38,7 @@ const item = {
   },
 };
 
-export default function Posts({ posts}) {
+export default function Posts({ posts }) {
   return (
     <motion.div
       variants={container}
@@ -46,16 +46,17 @@ export default function Posts({ posts}) {
       whileInView="show"
       className={styles.gridContainer}
       >
-      {posts.map(({ title, slug, eyecatch, url, categories}) => (
+      {posts.map(({ title, slug, eyecatch, url, categories }) => (
         <motion.article
           variants={item}
           className={styles.post} key={slug}
           >
-        <Link 
-          href={url}
-          rel="noopener noreferrer" target="_blank"
-        > 
-          <figure>
+        {url ? (
+          <Link 
+            href={url}
+            rel="noopener noreferrer" target="_blank"
+          > 
+            <figure>
             <Image
               src={eyecatch.url}
               alt=""
@@ -65,17 +66,30 @@ export default function Posts({ posts}) {
               placeholder="blur"
               blurDataURL={eyecatch.blurDataURL}
             />
-          </figure>
+            </figure>
           </Link>
-          {/* <ul>
-            {categories.map(({ name, slug }) =>(
-              <li key={slug}>
-                <Link href={`/blog/category/${slug}`}>
-                  {name}
-                </Link>
-              </li>
+        ):(
+          <figure>
+          <Image
+            src={eyecatch.url}
+            alt=""
+            layout="fill"
+            objectFit="cover"
+            sizes="(min-width: 1152px) 576px, 50vw"
+            placeholder="blur"
+            blurDataURL={eyecatch.blurDataURL}
+          />
+          </figure>
+        )}
+          <ul className={styles.list}>
+          {categories.map(({ name, slug }) => (
+            <li key={slug} className={styles.listItem}>
+              <Link href={`/blog/category/${slug}`}>
+                {name}
+              </Link>
+            </li>
             ))}
-          </ul> */}
+          </ul>
           <h2 className={styles.postTitle}>{title}</h2>
             <div className={styles.flex}>
               <Link 
@@ -85,7 +99,9 @@ export default function Posts({ posts}) {
                 &nbsp;詳細ページへ
                 <BiChevronRight/>
               </Link>
+              {url && (
               <Button url={url}/>
+              )}
             </div>
         </motion.article>
       ))}
