@@ -11,7 +11,6 @@ import { eyecatchLocal } from '@/lib/constants'
 export default async function Blog() {
 
   const posts = await getAllPosts()
-  console.log(posts)
 
   for (const post of posts) {
     if (!post.hasOwnProperty('eyecatch')) {

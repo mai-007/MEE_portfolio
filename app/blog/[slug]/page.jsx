@@ -32,7 +32,7 @@ export default async function Post({
     const [prevPost, nextPost] = prevNextPost(allSlugs, slug)
     const spImage = post.spimage
 
-    console.log(spImage)
+    console.log(post)
   
     return(
     <Container>
@@ -73,11 +73,15 @@ export default async function Post({
                   </Image>
                   ))}
               </div>
+              {link && (
             <Button url={link} className={styles.link}/>
+              )}
           </TwoColumnMain>
           <TwoColumnSidebar>
             <PostCategories categories={categories} />
+            {link && (
             <Button url={link}/>
+            )}
           </TwoColumnSidebar>
         </TwoColumn>  
         <Pagination
