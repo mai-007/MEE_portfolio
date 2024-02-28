@@ -5,12 +5,6 @@
   margin: 0 auto;
 }
 
-@media(min-width: 500px) {
-  .flexContainer{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-  }
-}
 
 /* 高さを指定せずアスペクト比を保つ */
 .flexContainer {
@@ -21,10 +15,15 @@
     align-items: flex-start;
     &>span {
       min-width: calc((100% - 24px) /3);
+      max-width: calc((100% - 24px) /3)!important;
     }
   }
 
-  // .image {
-  //   position: relative !important;
-  //   height: unset !important;
+  // @media(min-width: 500px) {
+  //   .flexContainer{
+  //     display: block;
+  //     &>span {
+  //       min-width: 100%;
+  //     }
+  //   }
   // }

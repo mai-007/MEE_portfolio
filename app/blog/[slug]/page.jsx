@@ -32,7 +32,7 @@ export default async function Post({
     const [prevPost, nextPost] = prevNextPost(allSlugs, slug)
     const spImage = post.spimage
     const spHeights = spImage.map(img => img.height);
-    console.log('spHeights:', spHeights);
+    const spWidth = spImage.map(img => img.width);
   
     return(
     <Container>
@@ -46,9 +46,9 @@ export default async function Post({
             width={eyecatch.width}
             height={eyecatch.height}
             size="(min-width: 1152px) 1152px, 100vw"
-            priority
-            placeholder="blur"
-            blurDataURL={eyecatch.blurDataURL}
+            // priority
+            // placeholder="blur"
+            // blurDataURL={eyecatch.blurDataURL}
           />
         </figure>
         <PostHeader title={title} subTitle="Work Article" publish={publish}/>
@@ -65,7 +65,7 @@ export default async function Post({
                     key={index}
                     src={url}
                     alt=""
-                    width={375}
+                    width={spWidth[i]}
                     height={spHeights[i]}
                     layout="responsive"
                     priority
