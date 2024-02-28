@@ -9,16 +9,41 @@ import "swiper/css/bundle";
 import { BsGithub } from "react-icons/bs";
 import Link from "next/link"
 import styles from "./hero.module.scss";
-import { motion } from 'framer-motion';
+import { motion, useAnimate, stagger } from "framer-motion"
 
 //motion
-const containerVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+const textContainerVariants = {
+  hidden: { 
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
 };
+
+const charVariants = {
+  hidden: { 
+    opacity: 0,
+    y: 20,
+    x: 20,
+  },
+  visible: { 
+    opacity: 1,
+    y: 0,
+    x: 0,
+    transition: { duration: 0.5 }
+  },
+};
+
 
 export default function Hero() {
 
+  const mainText = () => {
+    return "心動かすデザインと保守性・再利用性の高いコードを"
+    }
   return (
       <Swiper
         modules={[Navigation, Pagination, Autoplay,EffectFade]}
@@ -49,12 +74,22 @@ export default function Hero() {
       >
           <SwiperSlide className={styles.slideItem}>
             <span className={styles.swiperSubTitle}>MISSION</span>
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-            <h2 className={styles.swiperTitle}>心動かすデザインと保守性・再利用性の高いコードを</h2>
+            <div>
+          <motion.h2
+            className={styles.swiperTitle}
+            variants={textContainerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {mainText().split('').map((char, index) => (
+              <motion.span
+                key={index}
+                variants={charVariants}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.h2>
             <div className={styles.text}>
               <p>
               このサイトはJamstackでHeadressな高速サイトです。
@@ -94,7 +129,7 @@ export default function Hero() {
             <BsGithub />
             &nbsp;ソースコードはこちら
             </Link>
-            </motion.div>
+            </div>
         </SwiperSlide>
       </Swiper>
   );
