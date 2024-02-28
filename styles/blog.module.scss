@@ -1,9 +1,4 @@
-.flexContainer{
-  padding: 56px 24px;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 24px;
-}
+
 .link{
   width: 560px;
   height: 200px;
@@ -16,3 +11,20 @@
     grid-template-rows: 1fr;
   }
 }
+
+/* 高さを指定せずアスペクト比を保つ */
+.flexContainer {
+    padding: 56px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    &>span {
+      min-width: calc((100% - 24px) /3);
+    }
+  }
+
+  // .image {
+  //   position: relative !important;
+  //   height: unset !important;
+  // }

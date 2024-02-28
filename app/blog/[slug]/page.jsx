@@ -31,8 +31,8 @@ export default async function Post({
     const allSlugs = await getAllSlugs()
     const [prevPost, nextPost] = prevNextPost(allSlugs, slug)
     const spImage = post.spimage
-
-    console.log(post)
+    const spHeights = spImage.map(img => img.height);
+    console.log('spHeights:', spHeights);
   
     return(
     <Container>
@@ -59,13 +59,14 @@ export default async function Post({
             </PostBody>
             <div className={styles.flexContainer}>
                 {
-                spImage.map(({ url, index }) =>(
+                spImage.map(({ url, index }, i) =>(
                   <Image
+                    className={styles.image}
                     key={index}
                     src={url}
                     alt=""
-                    width={340.5}
-                    height={672}
+                    width={375}
+                    height={spHeights[i]}
                     layout="responsive"
                     priority
                     placeholder="blur"
