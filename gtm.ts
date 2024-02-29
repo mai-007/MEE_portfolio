@@ -1,4 +1,4 @@
-// lib/gtm.ts
+// gtm.ts
 type WindowWithDataLayer = Window & {
   dataLayer: Record<string, any>[];
 };

@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Analytics from "@/components/Analytics/Analytics";
+import Analytics from "@/components/Analytics";
 import '@/styles/globals.scss';
 import Layout from '@/components/Layout/Layout';
 import AOS from 'aos';
@@ -13,10 +13,10 @@ export default function RootLayout({ children }) {
   
   return (
       <html>
-        <body className={`${notojp.variable} ${baloo.variable}`}>
         <Suspense>
           <Analytics />
         </Suspense>
+        <body className={`${notojp.variable} ${baloo.variable}`}>
           <Layout>
             {children}
           </Layout>
