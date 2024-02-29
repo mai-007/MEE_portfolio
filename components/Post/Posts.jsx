@@ -51,12 +51,11 @@ export default function Posts({ posts }) {
           variants={item}
           className={styles.post} key={slug}
           >
-        {url ? (
-          <Link 
-            href={url}
-            rel="noopener noreferrer" target="_blank"
-          > 
-            <figure>
+        <Link 
+          href={url ? url : `/blog/${slug}`}
+          {...(url ? { rel: "noopener noreferrer", target: "_blank" } : {})}
+        >
+          <figure>
             <Image
               src={eyecatch.url}
               alt=""
@@ -66,21 +65,8 @@ export default function Posts({ posts }) {
               placeholder="blur"
               blurDataURL={eyecatch.blurDataURL}
             />
-            </figure>
-          </Link>
-        ):(
-          <figure>
-          <Image
-            src={eyecatch.url}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            sizes="(min-width: 1152px) 576px, 50vw"
-            placeholder="blur"
-            blurDataURL={eyecatch.blurDataURL}
-          />
           </figure>
-        )}
+          </Link>
           <ul className={styles.list}>
           {categories.map(({ name, slug }) => (
             <li key={slug} className={styles.listItem}>

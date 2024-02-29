@@ -65,7 +65,7 @@ export default function Skill(){
       initial="hidden"
       whileInView="show"
       className={styles.container}>
-      <h2>スキルセット</h2>
+      <h2>Skill</h2>
       {categories.map((category, categoryIndex) => (
         <motion.div 
           key={categoryIndex}

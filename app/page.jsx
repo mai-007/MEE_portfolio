@@ -31,7 +31,7 @@ export default  async function Home() {
       </Container>
       <Skill/>
       <Container>
-        <JobCareer/>
+        {/* <JobCareer/> */}
       </Container>
     </>
   )

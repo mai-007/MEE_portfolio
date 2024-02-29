@@ -13,6 +13,9 @@
   padding: 16px;
   border-radius: 16px;
   max-width: calc((100% - 56px) / 2);
+  @media(max-width: 769px){
+    max-width: fit-content;
+  }
 }
 .date{
   font-size: 1.2rem;

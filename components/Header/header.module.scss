@@ -10,4 +10,7 @@
   font-family: var(--font-baloo);
   color: var(--black);
   padding: 1rem 2rem;
+  @media(max-width: 769px){
+    padding: 16px;
+  }
 }

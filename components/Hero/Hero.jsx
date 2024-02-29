@@ -1,7 +1,5 @@
 'use client'
-import Image from "next/legacy/image";
 
-// swiper
 import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -23,7 +21,6 @@ const textContainerVariants = {
     },
   },
 };
-
 const charVariants = {
   hidden: { 
     opacity: 0,
@@ -37,7 +34,6 @@ const charVariants = {
     transition: { duration: 0.5 }
   },
 };
-
 
 export default function Hero() {
 
