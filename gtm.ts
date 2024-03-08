@@ -1,22 +1,19 @@
-// gtm.ts
-type WindowWithDataLayer = Window & {
-  dataLayer: Record<string, any>[];
-};
+// JavaScript
 
-declare const window: WindowWithDataLayer;
+export const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
-export const GTM_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
+/**
+ * @typedef {Object} CustomWindow
+ * @property {Array<any>} dataLayer
+ */
 
-export const pageview = (url: string) => {
-  if (typeof window.dataLayer !== "undefined") {
-    window.dataLayer.push({
-      event: "pageview",
-      page: url,
-    });
-  } else {
-    console.log({
-      event: "pageview",
-      page: url,
-    });
+export const pageView = (url) => {
+  if (process.env.NODE_ENV !== "production") {
+    return;
   }
+  const customWindow = window;
+  customWindow.dataLayer.push({
+    event: "pageView",
+    page: url,
+  });
 };
