@@ -1,16 +1,16 @@
 import { siteMeta } from '@/lib/constants'
-import { openGraphMetadata, twitterMetadata } from '@/lib/baseMetadata'
+//import { openGraphMetadata, twitterMetadata } from '@/lib/baseMetadata'
 import Container from '@/components/Container/Container'
 import Hero from '@/components/Hero/Hero'
-import PostBody from '@/components/Post/PostBody'
+//import PostBody from '@/components/Post/PostBody'
 import Contact from '@/components/Contact/Contact'
 import {
   TwoColumn,
   TwoColumnMain,
   TwoColumnSidebar,
 } from '@/components/TwoColumn'
-import Accordion from '@/components/Accodion/Accodion'
-import Image from 'next/legacy/image'
+//import Accordion from '@/components/Accodion/Accodion'
+//import Image from 'next/legacy/image'
 
 
 export default function About() {
@@ -29,7 +29,7 @@ export default function About() {
       </figure>
       <TwoColumn>
         <TwoColumnMain>
-          <PostBody>
+          {/* <PostBody>
             <p>
               Cubeが得意とする分野はモノづくりです。3次元から2次元の造形、プログラミングやデザインなど、さまざまな技術を組み合わせることによって社会や環境と結びつけるクリエイティブを提案し続けています。
             </p>
@@ -60,7 +60,7 @@ export default function About() {
                 公開リポジトリを活用すると、全世界のどこからでもアクセスし、開発者が関連するプロジェクトのタスクを利用することができます。
               </p>
             </Accordion>
-          </PostBody>
+          </PostBody> */}
         </TwoColumnMain>
         <TwoColumnSidebar>
           <Contact />

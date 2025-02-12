@@ -1,7 +1,7 @@
 export  const siteMeta = {
   siteTitle: 'MEE.portfolio',
   siteDesc: 'ポートフォリオ',
-  siteUrl: 'https://localhost:3000',
+  siteUrl: 'https://mee-portfolio-phi.vercel.app/',
   siteLang: 'ja',
   siteLocale: 'ja_JP',
   siteType: 'website',

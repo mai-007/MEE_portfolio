@@ -61,7 +61,7 @@ export default function Nav() {
           </Link>
         }
         </li>
-        <li key="career">
+        {/* <li key="career">
         {(pathname == '/')?
           <Scroll 
             to="Career" 
@@ -76,10 +76,10 @@ export default function Nav() {
           <Link href={`/#Career`} 
             onClick={closeNav}
           >
-            Skill
+            Career
           </Link>
         }
-        </li>
+        </li> */}
         <li key="works">
           <Link href="/blog" onClick={closeNav}>
             Works
