@@ -81,7 +81,7 @@ export default function Posts({ posts }) {
               <Link 
                 href={`/blog/${slug}`}
                 className={styles.siteUrl}
-              > 
+              >
                 &nbsp;詳細ページへ
                 <BiChevronRight/>
               </Link>
