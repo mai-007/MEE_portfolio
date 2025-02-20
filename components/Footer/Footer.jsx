@@ -9,7 +9,7 @@ export default function Footer() {
       <Container>
         <div className={styles.flexContainer}>
           <Logo />
-          {/* <Social/> */}
+          {/* <Social/> */
         </div>
       </Container>
     </footer>
